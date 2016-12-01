@@ -1,0 +1,16 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<inputDefinition>nabu.cms.order.types.model.order.OrderLocation</inputDefinition>
+	<sql>insert into order_locations (
+	id,
+	created,
+	modified,
+	order_id,
+	node_location_id
+) values (
+	:id,
+	:created,
+	:modified,
+	:orderId,
+	:nodeLocationId
+)</sql>
+</jdbcService>

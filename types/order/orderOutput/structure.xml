@@ -1,0 +1,3 @@
+<structure name="order" superType="nabu.cms.order.types.order.orderInput">
+    <field foreignKey="nabu.cms.masterdata.types.model.masterdata.MasterDataEntry:id" name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+</structure>

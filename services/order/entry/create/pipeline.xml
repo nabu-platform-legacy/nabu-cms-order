@@ -1,0 +1,12 @@
+<structure name="pipeline">
+    <structure name="input" validate="true">
+        <field name="connectionId" type="java.lang.String"/>
+        <field minOccurs="0" name="transactionId" type="java.lang.String"/>
+        <structure definition="nabu.cms.order.types.order.entry.orderEntryInput" name="entry"/>
+        <field minOccurs="0" name="updateOrder" type="java.lang.Boolean"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.cms.order.types.order.entry.orderEntryOutput" name="entry"/>
+    </structure>
+    <structure collectionName="OrderEntries" definition="nabu.cms.order.types.model.order.OrderEntry" name="entry" namespace="nabu.cms.order.types.model.order"/>
+</structure>
