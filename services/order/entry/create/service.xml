@@ -6,9 +6,11 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" comment="Map rest" id="e3c89fec-c3d2-4529-815f-2e5e0661d8f2">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c000d2e6-453d-4288-9249-e310c14f070d" serviceId="nabu.utils.Server.uuid" resultName="result56e1ded033704d889261f8a819359dbb" invocationOrder="0" temporaryMapping="true" y="89" x="41">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c000d2e6-453d-4288-9249-e310c14f070d" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Server.uuid" resultName="result56e1ded033704d889261f8a819359dbb" y="89" x="41">
+			<asynchronous>false</asynchronous>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6e20b89b-e655-4878-a9aa-ec9f0eab205f" serviceId="nabu.utils.Date.now" resultName="resultb83841507fc54726a7cebbffdd3f060d" invocationOrder="0" temporaryMapping="true" y="160" x="44">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="6e20b89b-e655-4878-a9aa-ec9f0eab205f" invocationOrder="0" temporaryMapping="true" serviceId="nabu.utils.Date.now" resultName="resultb83841507fc54726a7cebbffdd3f060d" y="160" x="44">
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="c723c5cf-8259-4e2e-a43f-eedb786b58e7" fixedValue="false" optional="false" mask="false">
 			<from>result56e1ded033704d889261f8a819359dbb/uuid</from>
@@ -22,9 +24,13 @@
 			<from>resultb83841507fc54726a7cebbffdd3f060d/date</from>
 			<to>entry/modified</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="50d42b62-7f20-4221-aef4-8198b229bd25" fixedValue="true" optional="true" mask="false">
+			<from>0</from>
+			<to>entry/vat</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" id="b705ecff-a4e0-445b-85bb-1260d5015b2e">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="9e962056-463f-4299-9165-fc63d99e842e" serviceId="nabu.cms.order.database.order.entry.insert" resultName="result72bb35f5144d4a0da7634240a95ffcaa" invocationOrder="0" temporaryMapping="true" y="125" x="52">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="9e962056-463f-4299-9165-fc63d99e842e" invocationOrder="0" temporaryMapping="true" serviceId="nabu.cms.order.database.order.entry.insert" resultName="result72bb35f5144d4a0da7634240a95ffcaa" y="125" x="52">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="d746ffee-ef4a-49a9-a384-399d529af590" fixedValue="false" optional="false" mask="false">
 				<from>input/connectionId</from>
 				<to>connection</to>
@@ -37,6 +43,7 @@
 				<from>entry</from>
 				<to>parameters[0]</to>
 			</steps>
+			<asynchronous>false</asynchronous>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="b71a68eb-6a8f-4ef3-b3a0-821f4846b8e9" fixedValue="false" optional="false" mask="true">
 			<from>entry</from>
@@ -45,7 +52,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch" disabled="false" id="296db58a-f224-4dd5-9ba8-38a293922d86" query="input/updateOrder">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map" disabled="false" label="true" id="15cf32f2-32e2-4c24-b58a-4bc8488d0a85">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c3afea1a-728a-4865-9f25-538dbbf03281" serviceId="nabu.cms.order.database.order.recalculate" resultName="resultcccdafd94b604ec5875ca4974ee9bf68" invocationOrder="0" temporaryMapping="true" y="60" x="74">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke" disabled="false" id="c3afea1a-728a-4865-9f25-538dbbf03281" invocationOrder="0" temporaryMapping="true" serviceId="nabu.cms.order.database.order.recalculate" resultName="resultcccdafd94b604ec5875ca4974ee9bf68" y="60" x="74">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link" disabled="false" id="76369324-50cf-47c6-83b4-ea6da9969a74" fixedValue="false" optional="false" mask="false">
 					<from>input/connectionId</from>
 					<to>connection</to>
@@ -58,6 +65,7 @@
 					<from>input/transactionId</from>
 					<to>transaction</to>
 				</steps>
+				<asynchronous>false</asynchronous>
 			</steps>
 		</steps>
 	</steps>

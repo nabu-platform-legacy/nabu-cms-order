@@ -6,19 +6,19 @@
 	modified,
 	price,
 	transport_price,
-	weight,
-	length,
 	state_id,
-	price_unit_id
+	price_unit_id,
+	vat,
+	comment
 ) values (
 	:id,
 	:created,
 	:modified,
 	:price,
 	:transportPrice,
-	:weight,
-	:length,
 	:stateId,
-	:priceUnitId
+	:priceUnitId,
+	:vat,
+	:comment
 )</sql>
 </jdbcService>

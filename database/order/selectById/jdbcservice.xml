@@ -1,0 +1,15 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.cms.order.types.model.order.Order</outputDefinition>
+	<sql>select
+	id,
+	created,
+	modified,
+	price,
+	transport_price,
+	state_id,
+	price_unit_id,
+	vat,
+	comment
+from orders
+where id = :id</sql>
+</jdbcService>

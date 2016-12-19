@@ -17,5 +17,5 @@
 	vat,
 	order_id
 from order_entries
-where id = :id</sql>
+where order_id = :orderId</sql>
 </jdbcService>
