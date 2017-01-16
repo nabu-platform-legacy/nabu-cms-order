@@ -5,7 +5,6 @@
     <generateCollectionNames>true</generateCollectionNames>
     <generateFlatDocuments>true</generateFlatDocuments>
     <imports>nabu.cms.core.types.model</imports>
-    <imports>nabu.cms.masterdata.types.model</imports>
     <inverseParentChildRelationship>false</inverseParentChildRelationship>
     <modifiedField>modified</modifiedField>
 </umlModel>
