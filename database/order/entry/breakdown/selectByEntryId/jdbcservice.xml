@@ -1,0 +1,13 @@
+<jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<outputDefinition>nabu.cms.order.types.model.order.OrderEntryBreakdown</outputDefinition>
+	<sql>select
+	id,
+	created,
+	modified,
+	price,
+	price_type_id,
+	price_unit_id,
+	order_entry_id
+from order_entry_breakdowns
+where order_entry_id = :entryId</sql>
+</jdbcService>

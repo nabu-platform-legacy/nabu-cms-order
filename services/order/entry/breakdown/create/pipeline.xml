@@ -4,10 +4,12 @@
         <field minOccurs="0" name="transactionId" type="java.lang.String"/>
         <structure definition="nabu.cms.order.types.order.entry.breakdown.breakdownInput" name="breakdown"/>
         <field minOccurs="0" name="updateEntry" type="java.lang.Boolean"/>
+        <field minOccurs="0" name="minimumEntryPrice" type="java.lang.Double"/>
+        <field minOccurs="0" name="minimumOrderPrice" type="java.lang.Double"/>
     </structure>
     <structure name="output">
         <structure definition="nabu.cms.order.types.order.entry.breakdown.breakdownOutput" name="breakdown"/>
     </structure>
-    <structure collectionName="OrderEntryBreakdowns" definition="nabu.cms.order.types.model.order.OrderEntryBreakdown" maxOccurs="1" name="breakdown" namespace="nabu.cms.order.types.model.order"/>
+    <structure collectionName="OrderEntryBreakdowns" definition="nabu.cms.order.types.model.order.OrderEntryBreakdown" name="breakdown" namespace="nabu.cms.order.types.model.order"/>
     <structure collectionName="OrderEntries" definition="nabu.cms.order.types.model.order.OrderEntry" minOccurs="0" name="orderEntry" namespace="nabu.cms.order.types.model.order"/>
 </structure>

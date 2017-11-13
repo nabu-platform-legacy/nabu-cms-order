@@ -1,6 +1,6 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<sql>update orders set 
-	price = (select sum(price) from order_entries where order_id = :orderId)
+	price = (select case when :minimumPrice is not null and sum(price) &lt; :minimumPrice then :minimumPrice else sum(price) end from order_entries where order_id = :orderId)
 where id = :orderId
 </sql>
 </jdbcService>
