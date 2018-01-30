@@ -1,5 +1,4 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<inputDefinition>nabu.cms.order.types.model.order.OrderEntry</inputDefinition>
 	<sql>insert into order_entries (
 	id,
 	created,
@@ -15,6 +14,8 @@
 	length_unit_id,
 	weight_unit_id,
 	vat,
+	comment,
+	exact_length,
 	order_id
 ) values (
 	:id,
@@ -31,6 +32,9 @@
 	:lengthUnitId,
 	:weightUnitId,
 	:vat,
+	:comment,
+	:exactLength,
 	:orderId
 )</sql>
+	<inputDefinition>nabu.cms.order.types.model.order.OrderEntry</inputDefinition>
 </jdbcService>

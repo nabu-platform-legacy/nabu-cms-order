@@ -1,5 +1,4 @@
 <jdbcService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<outputDefinition>nabu.cms.order.types.model.order.OrderEntry</outputDefinition>
 	<sql>select
 	id,
 	created,
@@ -15,7 +14,10 @@
 	length_unit_id,
 	weight_unit_id,
 	vat,
+	comment,
+	exact_length,
 	order_id
 from order_entries
 where order_id = :orderId</sql>
+	<outputDefinition>nabu.cms.order.types.model.order.OrderEntry</outputDefinition>
 </jdbcService>
